@@ -2,11 +2,13 @@ package test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 
-public class Webdriverdefinition {
+public class WebdriverSetup{
     public static WebDriver driver = null;
-    public Webdriverdefinition()
+    public WebdriverSetup()
     {
         if(driver == null) {
 
@@ -24,7 +26,7 @@ public class Webdriverdefinition {
         }
     }
 
-    @AfterMethod
+    @AfterTest
     public static void closeDriver(){
         driver.quit();
     }
